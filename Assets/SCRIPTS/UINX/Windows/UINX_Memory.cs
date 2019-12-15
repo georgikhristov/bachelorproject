@@ -206,6 +206,10 @@ public class UINX_Memory : UINX_Window
             Destroy(figures[i]);
         }
         figures.Clear();
+        Overmind.PlayerStation.SwitchPositionToVideo();
+                 
+        Overmind.SphereManager.firstVideo.targetSurface.GetComponent<Renderer>().enabled = true;
+        Overmind.SphereManager.PlayVideo("TheExamDayPlayNo.mp4");
     }
 
     public bool NextDrawLetter()

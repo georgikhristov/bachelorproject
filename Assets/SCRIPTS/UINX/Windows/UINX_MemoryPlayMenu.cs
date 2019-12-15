@@ -24,12 +24,6 @@ public class UINX_MemoryPlayMenu : UINX_Window
         Overmind.MemoryGameOvermind.Sounds[0].Play();
     }
 
-    protected virtual void OnExitButton(UINX_Button button)
-    {
-        Hide();
-        //Overmind.PlayerStation.ScreenFade.SetFadeIn(() => { Application.Quit(); });
-        Overmind.MemoryGameOvermind.Sounds[1].Play();
-    }
     protected virtual void OnPlayEasyButton(UINX_Button button)
     {
         Overmind.MemoryGameOvermind.NewGame(EGame.Easy);

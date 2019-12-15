@@ -36,6 +36,10 @@ public class Overmind : MonoBehaviour
     public UINX_WindowsCanvas WindowsCanvas;
 
     public EGames CurrentGame = EGames.TicTackToe;
+
+    public SphereManager _sphereManager;
+    public static SphereManager SphereManager { get { return GetInstance._sphereManager;}}
+
     public void SetGame(EGames Game)
     {
         switch(Game)
@@ -131,8 +135,12 @@ public class Overmind : MonoBehaviour
     private void Awake()
     {
         WindowsCanvas.Init();
-        PlayerStation.SetUINXMode(true);
-        EventsOvermind.Send(new ShowUINX_Window() { ID = "AsteroidPlayMenu" });//change here fo example change id for MemoryPlayMenu or other play menu name
+        PlayerStation.HandVisible(false);
+        PlayerStation.SwitchPositionToVideo();
+        //PlayerStation.SetUINXMode(true);
+        //EventsOvermind.Send(new ShowUINX_Window() { ID = "DecisionMenu" });
+        //you show menu here
+        // yes yes just make the decisions appear when the clip stops
     }
 
     private void Update()
